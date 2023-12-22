@@ -1,0 +1,373 @@
+Это тестовое задание.
+Дается перед задачами на программирование
+Буквой (V) обозначаю возможные ответы
+Гарантий на правильность нет
+(?) - пока не могу проверить
+(в скобках пишу каменты и непонятки)
+
+
+
+1. Какие исключения называются проверяемыми (checked)
+- Исключения, возникающие на этапе исполнения программы
+- Те, которые компилятор требует обрабатывать или декларировать  (V)
+при помощи trows
+- Те, которые можно игнорировать
+- Исключения, проверяемые антивирусной программой
+
+---
+
+2. Что такое демон-поток в Java
+- Поток, которые находится на отдельном уровне приоритетов
+- Поток, который был запущен чужим кодом
+- Поток, который будет выполняться, даже если все остальные    (V)
+не демон-потоки завершили выполнение
+- Поток, который не блокирует завершение программы
+- Сканирующая пргограмма, запущенная на сервере для обслуживания
+процесса
+(не очень понятные описания)
+
+---
+
+3. Что из следующего является ключевым словом в java
+- function
+- const
+- assert       (V)
+- includes
+(как я понимаю assert - вероятно сейчас уже устарело)
+
+---
+
+4. Какой метод используется для преобразования строки в число для типов данных,
+таких как byte, short, int, long, float, and double
+- parseInt
+- valueOf (V)
+- toNumber
+- parseType
+(пример: Float.valueOf(String)
+
+---
+
+5. Какое значение будет у переменной b в результате выполнения кода?
+    boolean b = (!(true) && (false));
+- true
+- false (V)
+- null
+- 0
+
+---
+
+6. Что выведет код:
+System.out.println(1 + 2 + "3");
+(дана строка для ответа)
+Ответ: 33
+(если я правильно понимаю сочетание со стринг дает стринг)
+
+---
+
+7. Что выведет данный код
+
+    public static void main(String[] args) {
+         var set = new HashSet<Integer>();
+         Random random = new Random();
+        for (int i = 0; i < 100; i++) {
+            set.add(random.nextInt(10));
+        }
+        System.out.println(set.size());
+    }
+- 0
+- 10      (V)
+- от 1 до 10
+- 9
+- ошибка компиляции
+- ошибка выполнения
+
+---
+
+8. Что выведется в консоль в результате работы программы
+    public static void main(String[] args) {
+        int a = 10;
+        change(a);
+        print(a);
+    }
+    static void change(int a) {
+        a = 20;
+    }
+    static void print(int a){
+        System.out.println(a);
+    }
+- Ошибка компиляции
+- Ошибка выполнения
+- 10      (V)
+- 20
+- 10 или 20 (как повезет)
+
+---
+
+9. Что будет результатом выполнения программы
+    public static void main(String[] args) {
+        List<Object> list = new ArrayList<>();
+        while (true) {
+            list.add(new Object());
+        }
+    }
+- ошибка компиляции
+- ошибка выполнения   (V)
+- программа будет работать бесконечно
+- программа завершится без ошибки
+('while' statement cannot complete without throwing an exception)
+(Exception in thread "main" java.lang.OutOfMemoryError: Java heap space)
+
+---
+
+10. Что будет результатом выполнения программы
+
+    public static void main(String[] args) {
+        int[] nums = new int[10];
+        for (int i = 1; i <= 10 ; i++) {
+            nums[i] *=2;
+        }
+        System.out.println(nums[0]);
+    }
+- Ошибка компиляции
+- Ошибка выполнения      (V)
+- Программа будет работать бесконечно
+- Программа завершится без ошибки и ничего не выведет
+- Программа завершится без ошибки и выведет 0
+(Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException:
+Index 10 out of bounds for length 10)
+
+---
+
+11. Какая коллекция позволяет хранить объекты в порядке их добавления
+
+- LinkedHashSet   (V)
+- ArrayList       (V)
+- LinkedList      (V)
+- HashMap
+- Stack          (V)
+- All of the above
+(не уверен, но думаю эти)
+
+---
+
+12. Что выведет данный код
+
+public class Test {
+    public static void main(String[] args) {
+        var map = new HashMap<MyKey, Integer>();
+        MyKey key = new MyKey();
+        map.put(new MyKey(), 1);
+        map.put(new MyKey(), 2);
+        map.put(new MyKey(), 3);
+        map.put(null, 4);
+        System.out.println("map " + map);
+    }
+class MyKey {
+    @Override
+    public int hashCode() {
+        return 1;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        return false;
+    }
+    @Override
+    public String toString() {
+        return "MyKey";
+    }
+}
+- map = {MyKey{}=1, MyKey{}=2, MyKey{}=3}
+- map = {nul=4, MyKey{}=1, MyKey{}=2, MyKey{}=3 }
+- Ошибка компиляции   (V)
+- Ошибка выполения
+(MyKey key = new MyKey();
+java: non-static variable this cannot be referenced from a static context)
+
+---
+
+13. Какие из следующих коллекций не могут содержать дубликаты элементов
+- new ArrayList()
+- new HashSet()    (V)
+- new LinkedList()
+- new TreeSet()    (V)
+
+---
+
+14. Что выведет данный код
+    public static void main(String[] args) {
+        Stack<Integer> stack = new Stack<>();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+
+        System.out.print(stack.pop());
+        System.out.print(stack.pop());
+        System.out.print(stack.pop());
+    }
+(дана строка для ответа)
+Ответ: 321
+
+---
+(?) пока не могу проверить
+
+15. Каков результат вызова метода контроллера с использованием
+HTTP-запроса: localhost:/map?foo=foo&bar=bar
+
+@RestController
+public class SampleController {
+    @RequestMapping("/map")
+    public String map(@RequestParam("bar") String foo, @RequestParam("foo" String bar) {
+        return bar + foo;
+    }
+}
+(дана строка для ответа)
+(точно не знаю, пока не могу проверить)
+Ответ: barfoo
+
+---
+
+16. Чем идентифицируется Spring bean
+- автоматически сгенерированным UUID
+- уникальным строковым именем
+- автоувеличивающимся целочисленным ID
+- ID, полученным на основе его расположения в памяти
+- именем класса    (V)
+(не уверен правильный ли ответ)
+
+---
+(?) пока не могу проверить
+
+17. Каков результат вызова метода при использовании
+следующего HTTP запроса:
+Post localhost:8080/map
+Body:{"b":"b", "d":"d"}
+
+@RestController
+public class SampleController {
+    @RequestMapping("/map")
+    public String map(@RequestBody SampleObject sampleObject) {
+        return sampleObject.b + sampleObject.c;
+    }
+}
+
+class SampleObject {
+    public String b;
+    public String c;
+}
+- Во время выполнения возникает исключение InvalidRequestBodyException
+- Во время выполнения возникает исключение Missing PropertyException
+- В теле ответа возвращается текст "bnull"
+- В теле ответа возвращается текст "a"
+
+---
+
+18. Какой аннотацией помечается класс, чтобы указать, что он является
+Spring компонентом и должен быть управляемым контейнером
+- @Component     (V)
+- @Autowired
+- @Controller     (V)
+- @Service        (V)
+- все
+
+---
+
+19. Какие строки выведет следующий запрос
+(счет начинается с единицы)
+SELECT *
+FROM table_name
+LIMIT 5 OFFSET 15
+- c 16 по 20 строку
+- с 5 по 15 строку
+- с 5 по 20 строку
+- с 6 по 15 строку
+- с 36 по 40 строку
+- ошибка во время выполнения - Limit     (V)
+не может быть меньше Offset
+
+---
+(?) пока не могу проверить
+
+20. Что покажет следующий запрос
+SELECT seller_id, count(*)
+from Orders
+GROUP BY seller_id
+HAVING seller_id IN (2, 4, 6)
+- количество продавцов, у которых 2, 4, 6 товаров
+- количество заказов сгруппированное по продавцам 2, 4, 6
+- ничего, запрос сотавлен неверно, HAVING указывается до группировки
+- ничего, запрос сотавлен неверно, для указания условия
+должно быть использовано  WHERE
+
+---
+
+21. Какое ключевое слово используется для наследования в Java
+- extends  (V)
+- inherits
+- child
+- subclass
+
+---
+
+22. Что произойдет при попытке добавить элемент
+в уже заполненный ArrayList
+- Выделение дополнительной памяти для массива
+- Выделяется новый массив большего размера     (V)
+- Ошибка во время добавления
+
+---
+23. Что выведет данный код
+    public static void main(String[] args) {
+        String text = null;
+        System.out.println(text.length());
+    }
+- null
+- Ошибка выполнения   (V)
+- Ошибка компиляции
+(Exception in thread "main" java.lang.NullPointerException:
+Cannot invoke "String.length()" because "text" is null)
+
+--
+
+24. Что выведет данный код
+    public static void main(String[] args) {
+        int yearsMarried = 2;
+        switch (yearsMarried) {
+            case 1:
+                System.out.print("paper ");
+            case 2:
+                System.out.print("cotton ");
+            case 3:
+                System.out.print("leather ");
+            default:
+                System.out.print("I don't gotta buy gifts for nobody");
+        }
+    }
+- cotton
+- cotton leather
+- cotton leather I don't gotta buy gifts for nobody    (V)
+- cotton I don't gotta buy gifts for nobody
+(пока не очень понятно почему такой результат)
+
+---
+
+25. Что выведет данный код
+    public static void main(String[] args) {
+        int x = 10;
+        int y = 0;
+        double result = x / y;
+        System.out.println(result);
+    }
+- null
+- 0
+- infinite
+- Ошибка выполнения    (V)
+- Ошибка компилляции
+(Exception in thread "main" java.lang.ArithmeticException: / by zero)
+
+
+
+
+
+
+
+

@@ -1,0 +1,262 @@
+Это тестовое задание.
+Дается перед задачами на программирование
+Буквой (V) обозначаю возможные ответы
+Гарантий на правильность нет
+(в скобках пишу каменты и непонятки)
+
+1. Что выведет следующий код
+public class Cat {
+    String name;
+
+    private static Cat renameCat(Cat cat) {
+        System.out.print(cat.name);
+        cat = new Cat();
+        cat.name = "Mia";
+        return cat;
+    }
+
+    public static void main(String[] args) {
+        Cat cat = new Cat();
+        cat.name = "Yuna";
+        renameCat(cat);
+        System.out.print(cat.name);
+    }
+}
+
+- YunaMia
+- YunaYuna     (V)
+- MiaYuna
+- Ошибка компиляции
+(По поводу метода renameCat:
+Return value of the method is never used)
+
+---
+
+2. Что выведет код
+    short i1 = Short.MAX_VALUE;
+    long i2 = Long.MAX_VALUE;
+    int diff = (short) (i1 - i2);
+    System.out.println(diff);
+
+- Значение Short.MIN_VALUE    (V)
+- Значение Integer.MIN_VALUE
+- Значение (Long.VALUE - Short.MAX_VALUE)
+- ошибка компиляции
+
+---
+
+3. Какой класс коллекции лучше использовать для доступа по
+индексу элемента
+- LinkedList
+- ArrayList    (V)
+- HashSet
+- HashMap
+
+---
+
+4. Какие утверждения про модификаторы доступа верны
+- Модификатор доступа по умолчанию на методе дает к нему доступ
+подклассу в другом пакете
+- Модификатор доступа private дает доступ к членам класса только   (V)
+в рамках самого класса
+- Все члены интерфейса по умолчанию имеют модификатор public  (V)
+- Модификатор доступа protected дает доступ в рамках  (V)
+всех класов в пределах одного пакета.
+
+---
+
+5. Каким будет результат выполнения программы
+public class Test {
+    public static void main(String[] args) {
+        int k = 5;
+        for (short i = 0; i < 5; ) {
+            i++;
+            if (i % 2 != 0) {
+                continue;
+            }
+        k += 3;
+        }
+        System.out.println(k);
+    }
+}
+- 8
+- 14
+- 11    (V)
+- ошибка компиляции
+
+---
+
+6. Что выведет следующий код?
+    Integer[] ageArray;
+    try {
+        String age = "29";
+        ageArray = new Integer[]{Integer.parseInt(age)};
+    } catch (NumberFormatException nfe) {
+        System.out.println("Error parsing age");
+    }
+    System.out.println(Arrays.toString(ageArray));
+
+- 29
+- Ошибка компиляции   (V)
+- Error parsing age
+(Variable 'ageArray' might not have been initialized)
+
+---
+
+7. Какой метод является переопределенным
+- метод, аналогичный существующему методу в классе, но с другим
+возвращаемым значением
+- метод, аналогичный существующему методу в классе, нос другими параметрами
+- метод, аналогичный существующему методу из родительского класса/интерфейса
+- ничего из перечисленного    (V)
+
+---
+
+8. Правильно ли определен метод
+    public final Integer doNothing(int ... numbers, boolean needSum) {
+        return null;
+    }
+- Да
+- Нет (V)
+(Vararg parameter must be the last in the list)
+
+---
+
+9. При условии, что задан класс
+
+Public class Cat extends Animal {
+// ....
+}
+
+что выведет следующий код
+
+Cat cat = new Cat();
+System.out.println (cat instanceof Animal);
+
+- true    (V)
+- false
+- ошибка компиляции
+
+---
+
+10. Может ли ключевое слово static быть применено к определению
+внутреннего класса?
+
+- Да   (V)
+- Нет
+
+---
+
+11. Правилен ли код
+
+    List<String> catNames = Arrays.asList("Mira", "Aisha");
+    catNames.add("Jico");
+    System.out.println(catNames);
+- Да, все хорошо
+- Нет, ошибка компиляции
+- Нет, будет ошибка во время выполнения     (V)
+
+---
+
+12. Что выведет следующий код
+    List<Integer> counts = new ArrayList<>();
+    counts.add(1);
+    counts.add(5);
+    counts.add(8);
+    counts.add(2);
+    counts.remove(1);
+    counts.remove(2);
+    System.out.println(counts);
+
+- 5, 8
+- 1, 8      (V)
+- 1, 5
+- 1, 2
+
+---
+
+13. Каков будет результат выполнения программы
+    public static void main(String[] args) {
+        new Thread(() -> System.out.print("Thread 1 ")).start();
+        System.out.print("Thread 0 ");
+    }
+- Thread 1 Thread 0
+- Thread 0 Thread 1   (V)
+- Результат не определен
+
+---
+
+14. К чему из нижеперечисленного применимо ключевое слово final
+Выберите все правильные варианты
+
+- Класс     (V)
+- Метод     (V)
+- Абстрактный класс
+- Интерфейс
+- Локальная переменная, объявленная в методе   (V)
+- Статическое поле класса   (V)
+
+---
+
+15. Что выведет следующий код
+
+    String str = "d";
+    try {
+        throw new RuntimeException();
+    } catch (Exception e) {
+        str += "e";
+    } finally {
+        str += "f";
+    }
+    System.out.println(str);
+
+- df
+- def    (V)
+- de
+- ошибка компиляции
+
+---
+
+16. Что можно вставить на место пропуска, чтобы получить рабочий код
+
+    String str = "d";
+    try {
+        throw new RuntimeException();
+    } catch (___________ e) {
+        str += "e";
+    } catch (RuntimeException e) {
+        str += "f";
+    }
+    System.out.println(str);
+
+- Throwable
+- Error    (V)
+- Exception
+- Ничего из перечисленного
+
+---
+
+17. Правилен ли следующий код
+
+    Map<Integer, Integer> relations = new HashMap<>();
+    relations.put(1, 2);
+    relations.put(3, 4);
+    relations.forEach((k, v) -> relations.put(v, k));
+
+- Да
+- Нет
+- Нет, будет ошибка времени выполнения     (V)
+(ConcurrentModificationException)
+
+
+
+
+
+
+
+
+
+
+
+
+
